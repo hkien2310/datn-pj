@@ -100,45 +100,67 @@ bg = Label(window, image=imgbg)
 bg.place(x=0, y=0)
 # lbl = Label(window, text="Camera", font=("Arial",20))
 # lbl.pack()
+
 #Tạo canvas trên cửa sổ
 canvas = Canvas(window, width= 500, height=400)
 canvas.place(x=150, y=0)
 #Hiển thị Logo trên cửa sổ
 lg = Label(window, image=imglogo)
 lg.place(x=0, y=0)
+
+# mỗi frame là 1 group
+frame = tkinter.Frame(window, padx=5, bg='red' )
+frame.place(x=225, y=425)
+
+frame2 = tkinter.Frame(window)
+frame2.place(x=50, y=475)
+
+
+frame3 = tkinter.Frame(window)
+frame3.place(x=450, y=475)
+
+frame4 = tkinter.Frame(window)
+frame4.place(x=675, y=150)
+
+
 #Tạo nút bấm trên cửa sổ
-button1 = tkinter.Button(window, text='Tìm mặt', activebackground='red', width=7, height=1, command=FindFace)
-button1.place(x=210, y=413)
-button2 = tkinter.Button(window, text='Mặt nạ', activebackground='red', width=7, height=1, command=FaceMesh)
-button2.place(x=310, y=413)
-button3 = tkinter.Button(window, text='Tìm tay', activebackground='red', width=7, height=1, command=FindHands)
-button3.place(x=410, y=413)
-button4 = tkinter.Button(window, text='Tìm dáng', activebackground='red', width=7, height=1, command=FindPose)
-button4.place(x=510, y=413)
-buttonu = tkinter.Button(window, text='Up', width=7, height=1, command=Up)
-buttonu.place(x=250, y=458)
-buttond = tkinter.Button(window, text='Down', width=7, height=1, command=Down)
-buttond.place(x=250, y=483)
-buttonl = tkinter.Button(window, text='Left', width=7, height=1, command=Left)
-buttonl.place(x=430, y=483)
-buttonr = tkinter.Button(window, text='Right', width=7, height=1, command=Right)
-buttonr.place(x=550, y=483)
-buttonf = tkinter.Button(window, text='FW', width=7, height=1, command=Forward)
-buttonf.place(x=490, y=458)
-buttonb = tkinter.Button(window, text='BW', width=7, height=1, command=Behind)
-buttonb.place(x=490, y=483)
-buttonrl = tkinter.Button(window, text='RotateL', width=7, height=1, command=RotateL)
-buttonrl.place(x=190, y=483)
-buttonrr = tkinter.Button(window, text='RotateR', width=7, height=1, command=RotateR)
-buttonrr.place(x=310, y=483)
-buttons = tkinter.Button(window, text='Stop', width=7, height=1, command=Stop)
-buttons.place(x=650, y=483)
-buttonm = tkinter.Button(window, text='Manual', activebackground='red', width=7, height=1, command=Manual)
-buttonm.place(x=670, y=150)
-buttona = tkinter.Button(window, text='Auto', activebackground='red', width=7, height=1, command=Auto)
-buttona.place(x=670, y=200)
-buttong = tkinter.Button(window, text='Gesture', activebackground='red', width=7, height=1, command=Gesture)
-buttong.place(x=670, y=250)
+button1 = tkinter.Button(frame, text='Tìm mặt', command=FindFace)
+button1.grid(row=0, column=0)
+button2 = tkinter.Button(frame, text='Mặt nạ', activebackground='red', width=7, height=1, command=FaceMesh)
+button2.grid(row=0, column=1)
+button3 = tkinter.Button(frame, text='Tìm tay', activebackground='red', width=7, height=1, command=FindHands)
+button3.grid(row=0, column=2)
+button4 = tkinter.Button(frame, text='Tìm dáng', activebackground='red', width=7, height=1, command=FindPose)
+button4.grid(row=0, column=3)
+
+buttonu = tkinter.Button(frame2, text='Up', width=7, height=1, command=Up, bg ="green")
+buttonu.grid(row=0, column=1)
+buttond = tkinter.Button(frame2, text='Down', width=7, height=1, command=Down, bg ="red")
+buttond.grid(row=2, column=1)
+buttonl = tkinter.Button(frame2, text='Left', width=7, height=1, command=Left, bg ="blue")
+buttonl.grid(row=1, column=0)
+buttonr = tkinter.Button(frame2, text='Right', width=7, height=1, command=Right, bg ="orange")
+buttonr.grid(row=1, column=3)
+
+
+buttonf = tkinter.Button(frame3, text='FW', width=7, height=1, command=Forward, bg ="green")
+buttonf.grid(row=0, column=1)
+buttonb = tkinter.Button(frame3, text='BW', width=7, height=1, command=Behind, bg ="red")
+buttonb.grid(row=2, column=1)
+buttonrl = tkinter.Button(frame3, text='RotateL', width=7, height=1, command=RotateL, bg ="blue")
+buttonrl.grid(row=1, column=0)
+buttonrr = tkinter.Button(frame3, text='RotateR', width=7, height=1, command=RotateR, bg ="orange")
+buttonrr.grid(row=1, column=3)
+
+
+buttons = tkinter.Button(frame4, text='Stop', width=7, height=1, command=Stop)
+buttons.grid(row=0, column=0)
+buttonm = tkinter.Button(frame4, text='Manual', activebackground='red', width=7, height=1, command=Manual)
+buttonm.grid(row=1, column=0)
+buttona = tkinter.Button(frame4, text='Auto', activebackground='red', width=7, height=1, command=Auto)
+buttona.grid(row=2, column=0)
+buttong = tkinter.Button(frame4, text='Gesture', activebackground='red', width=7, height=1, command=Gesture)
+buttong.grid(row=3, column=0)
 
 
 # Tranning hình ảnh nhận diện
