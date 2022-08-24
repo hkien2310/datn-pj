@@ -145,18 +145,14 @@ def faceRecognition(img):
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     faces = face_cascade.detectMultiScale(gray)
     name = []
-    cx=[]
     for (x, y, w, h) in faces:
         #cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
-        cx = x + w // 2
-        cy = y + h // 2
-        #cv2.circle(img, (cx, cy), 5,  (0, 0, 255), cv2.FILLED)
 
         roi_gray = gray[y:y + h, x:x + w]
 
         id, confidence = recognizer.predict(roi_gray)
         #print(confidence)
-        if (confidence < 90):
+        if (confidence < 50):
             profile = getProfile(id)
             #print(profile)
             if (profile != None):
@@ -167,22 +163,45 @@ def faceRecognition(img):
             # cv2.putText(img, "Unkown", (x + 10, y + h + 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
             name = 0
 
-    return img, name, cx
+    return img, name
 
 pid = [0.4, 0.4, 0]
-pError = 0
-def trackFace(cx, pid, pError):
-    error = cx - 250
-    spd = pid[0]*error + pid[1]*(error-pError)
-    spd = int(np.clip(spd, -100, 100))
+pError0, pError1 = 0, 0
+area = 0
+Range = [25000,35000]
+def trackFace(bbox, pid, pError0, pError1):
+    x,y,w,h = bbox
+    cx = x+w//2
+    cy = y+h//2
+    area = w*h
+    # print(area)
+    fb = 0
+    if area < Range[0] and area !=0:
+        fb = 10
+    if area > Range[1]:
+        fb = -10
+    if Range[0] < area < Range[1] and area == 0:
+        fb = 0
+
+    error0 = cx - 250
+    yv = pid[0]*error0 + pid[1]*(error0-pError0)
+    yv = int(np.clip(yv, -100, 100))
+
+    error1 = cy - 200
+    ud = pid[0]*error1 + pid[1]*(error1-pError1)
+    ud = int(np.clip(ud, -100, 100))
+    ud = -ud
 
     if cx==0:
-        spd = 0
-        error = 0
-    print(spd)
-    #datn.send_rc_control(0, 0, 0, spd)
+        yv = 0
+        error0 = 0
+    if cy==0:
+        ud = 0
+        error1 = 0
+    # print(yv,ud)
+    # datn.send_rc_control(0, fb, ud, yv)
 
-    return error
+    return error0, error1
 
 def Control():
     if btnu == 1:
@@ -211,7 +230,7 @@ def Control():
         #datn.send_rc_control(speed, 0, 0, 0)
 
 def update_frame():
-    global canvas, photo, pError
+    global canvas, photo, pError0,  pError1
     _, img = video.read()
     #img = datn.get_frame_read().frame
     img = cv2.resize(img, dsize=None, fx=0.8, fy=0.85)
@@ -219,7 +238,7 @@ def update_frame():
         print("K có j đâu, bấm nút cũng vô ích thôi")
         Control()
     if btna==1:
-        img, name, cx = faceRecognition(img)
+        img, name = faceRecognition(img)
         if name=="luu":
             #img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
             img = detector3.findPose(img)
@@ -234,9 +253,9 @@ def update_frame():
         detector2.ControlTello(lmList2)
 
     if btn1==1:
-        img, name, cx = faceRecognition(img)
-        pError = trackFace(cx, pid, pError)
-        img = detector.findFaces(img)
+        img, bbox = detector.findFaces(img)
+        # img, name, ct = faceRecognition(img)
+        pError0, pError1 = trackFace(bbox, pid, pError0, pError1)
     if btn2==1:
         img = detector1.findFaceMesh(img)
     if btn3==1:
