@@ -40,6 +40,90 @@ imglogo = cv2.cvtColor(imglogo, cv2.COLOR_BGR2RGB)
 imglogo = cv2.resize(imglogo, (100,100))
 imglogo = PIL.ImageTk.PhotoImage(image=PIL.Image.fromarray(imglogo))
 
+
+imgBTNUp = cv2.imread('asset/button/buttonUp.png')
+imgBTNUp = cv2.cvtColor(imgBTNUp, cv2.COLOR_BGR2RGB)
+imgBTNUp = cv2.resize(imgBTNUp, (80,25))
+imgBTNUp = PIL.ImageTk.PhotoImage(image=PIL.Image.fromarray(imgBTNUp))
+
+imgBTNDown = cv2.imread('asset/button/buttonDown.png')
+imgBTNDown = cv2.cvtColor(imgBTNDown, cv2.COLOR_BGR2RGB)
+imgBTNDown = cv2.resize(imgBTNDown, (80,25))
+imgBTNDown = PIL.ImageTk.PhotoImage(image=PIL.Image.fromarray(imgBTNDown))
+
+imgBTNLeft = cv2.imread('asset/button/buttonLeft.png')
+imgBTNLeft = cv2.cvtColor(imgBTNLeft, cv2.COLOR_BGR2RGB)
+imgBTNLeft = cv2.resize(imgBTNLeft, (80,25))
+imgBTNLeft = PIL.ImageTk.PhotoImage(image=PIL.Image.fromarray(imgBTNLeft))
+
+imgBTNRight = cv2.imread('asset/button/buttonRight.png')
+imgBTNRight = cv2.cvtColor(imgBTNRight, cv2.COLOR_BGR2RGB)
+imgBTNRight = cv2.resize(imgBTNRight, (80,25))
+imgBTNRight = PIL.ImageTk.PhotoImage(image=PIL.Image.fromarray(imgBTNRight))
+
+imgBTNFW = cv2.imread('asset/button/buttonFW.png')
+imgBTNFW = cv2.cvtColor(imgBTNFW, cv2.COLOR_BGR2RGB)
+imgBTNFW = cv2.resize(imgBTNFW, (80,25))
+imgBTNFW = PIL.ImageTk.PhotoImage(image=PIL.Image.fromarray(imgBTNFW))
+
+imgBTNBW = cv2.imread('asset/button/buttonBW.png')
+imgBTNBW = cv2.cvtColor(imgBTNBW, cv2.COLOR_BGR2RGB)
+imgBTNBW = cv2.resize(imgBTNBW, (80,25))
+imgBTNBW = PIL.ImageTk.PhotoImage(image=PIL.Image.fromarray(imgBTNBW))
+
+imgBTNRL = cv2.imread('asset/button/buttonRL.png')
+imgBTNRL = cv2.cvtColor(imgBTNRL, cv2.COLOR_BGR2RGB)
+imgBTNRL = cv2.resize(imgBTNRL, (80,25))
+imgBTNRL = PIL.ImageTk.PhotoImage(image=PIL.Image.fromarray(imgBTNRL))
+
+imgBTNRR = cv2.imread('asset/button/buttonRR.png')
+imgBTNRR = cv2.cvtColor(imgBTNRR, cv2.COLOR_BGR2RGB)
+imgBTNRR = cv2.resize(imgBTNRR, (80,25))
+imgBTNRR = PIL.ImageTk.PhotoImage(image=PIL.Image.fromarray(imgBTNRR))
+
+
+imgBTNStop = cv2.imread('asset/button/buttonStop.png')
+imgBTNStop = cv2.cvtColor(imgBTNStop, cv2.COLOR_BGR2RGB)
+imgBTNStop = cv2.resize(imgBTNStop, (80,25))
+imgBTNStop = PIL.ImageTk.PhotoImage(image=PIL.Image.fromarray(imgBTNStop))
+
+
+imgBTNAuto = cv2.imread('asset/button/buttonAuto.png')
+imgBTNAuto = cv2.cvtColor(imgBTNAuto, cv2.COLOR_BGR2RGB)
+imgBTNAuto = cv2.resize(imgBTNAuto, (80,25))
+imgBTNAuto = PIL.ImageTk.PhotoImage(image=PIL.Image.fromarray(imgBTNAuto))
+
+imgBTNFindFace = cv2.imread('asset/button/buttonFindFace.png')
+imgBTNFindFace = cv2.cvtColor(imgBTNFindFace, cv2.COLOR_BGR2RGB)
+imgBTNFindFace = cv2.resize(imgBTNFindFace, (80,25))
+imgBTNFindFace = PIL.ImageTk.PhotoImage(image=PIL.Image.fromarray(imgBTNFindFace))
+
+imgBTNFindHand = cv2.imread('asset/button/buttonFindHand.png')
+imgBTNFindHand = cv2.cvtColor(imgBTNFindHand, cv2.COLOR_BGR2RGB)
+imgBTNFindHand = cv2.resize(imgBTNFindHand, (80,25))
+imgBTNFindHand = PIL.ImageTk.PhotoImage(image=PIL.Image.fromarray(imgBTNFindHand))
+
+imgBTNFindPose = cv2.imread('asset/button/buttonFindPose.png')
+imgBTNFindPose = cv2.cvtColor(imgBTNFindPose, cv2.COLOR_BGR2RGB)
+imgBTNFindPose = cv2.resize(imgBTNFindPose, (80,25))
+imgBTNFindPose = PIL.ImageTk.PhotoImage(image=PIL.Image.fromarray(imgBTNFindPose))
+
+imgBTNGesture = cv2.imread('asset/button/buttonGesture.png')
+imgBTNGesture = cv2.cvtColor(imgBTNGesture, cv2.COLOR_BGR2RGB)
+imgBTNGesture = cv2.resize(imgBTNGesture, (80,25))
+imgBTNGesture = PIL.ImageTk.PhotoImage(image=PIL.Image.fromarray(imgBTNGesture))
+
+imgBTNManual = cv2.imread('asset/button/buttonManual.png')
+imgBTNManual = cv2.cvtColor(imgBTNManual, cv2.COLOR_BGR2RGB)
+imgBTNManual = cv2.resize(imgBTNManual, (80,25))
+imgBTNManual = PIL.ImageTk.PhotoImage(image=PIL.Image.fromarray(imgBTNManual))
+
+imgBTNMask = cv2.imread('asset/button/buttonMask.png')
+imgBTNMask = cv2.cvtColor(imgBTNMask, cv2.COLOR_BGR2RGB)
+imgBTNMask = cv2.resize(imgBTNMask, (80,25))
+imgBTNMask = PIL.ImageTk.PhotoImage(image=PIL.Image.fromarray(imgBTNMask))
+
+
 #Khai báo các biến nút bấm
 btn1, btn2, btn3, btn4, btnu, btnd, btnf, btnb, btnl, btnr, btny, btnv, btns,\
 btnm, btna, btng = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
@@ -109,7 +193,7 @@ lg = Label(window, image=imglogo)
 lg.place(x=0, y=0)
 
 # mỗi frame là 1 group
-frame = tkinter.Frame(window, padx=5, bg='red' )
+frame = tkinter.Frame(window )
 frame.place(x=225, y=425)
 
 frame2 = tkinter.Frame(window)
@@ -124,42 +208,42 @@ frame4.place(x=675, y=150)
 
 
 #Tạo nút bấm trên cửa sổ
-button1 = tkinter.Button(frame, text='Tìm mặt', command=FindFace)
+button1 = tkinter.Button(frame, image=imgBTNFindFace, borderwidth=0, command=FindFace, text='Tìm mặt')
 button1.grid(row=0, column=0)
-button2 = tkinter.Button(frame, text='Mặt nạ', activebackground='red', width=7, height=1, command=FaceMesh)
+button2 = tkinter.Button(frame, image=imgBTNMask, borderwidth=0, command=FaceMesh)
 button2.grid(row=0, column=1)
-button3 = tkinter.Button(frame, text='Tìm tay', activebackground='red', width=7, height=1, command=FindHands)
+button3 = tkinter.Button(frame, image=imgBTNFindHand, borderwidth=0, command=FindHands)
 button3.grid(row=0, column=2)
-button4 = tkinter.Button(frame, text='Tìm dáng', activebackground='red', width=7, height=1, command=FindPose)
+button4 = tkinter.Button(frame, image=imgBTNFindPose, borderwidth=0, command=FindPose)
 button4.grid(row=0, column=3)
 
-buttonu = tkinter.Button(frame2, text='Up', width=7, height=1, command=Up, bg ="green")
+buttonu = tkinter.Button(frame2, image=imgBTNUp, borderwidth=0, command=Up, bg ="green")
 buttonu.grid(row=0, column=1)
-buttond = tkinter.Button(frame2, text='Down', width=7, height=1, command=Down, bg ="red")
+buttond = tkinter.Button(frame2, image=imgBTNDown, borderwidth=0, text='Down', command=Down, bg ="red")
 buttond.grid(row=2, column=1)
-buttonl = tkinter.Button(frame2, text='Left', width=7, height=1, command=Left, bg ="blue")
+buttonl = tkinter.Button(frame2, image=imgBTNLeft, borderwidth=0, text='Left', command=Left, bg ="blue")
 buttonl.grid(row=1, column=0)
-buttonr = tkinter.Button(frame2, text='Right', width=7, height=1, command=Right, bg ="orange")
+buttonr = tkinter.Button(frame2, image=imgBTNRight, borderwidth=0, text='Right', command=Right, bg ="orange")
 buttonr.grid(row=1, column=3)
 
 
-buttonf = tkinter.Button(frame3, text='FW', width=7, height=1, command=Forward, bg ="green")
+buttonf = tkinter.Button(frame3, image=imgBTNFW, command=Forward, bg ="green")
 buttonf.grid(row=0, column=1)
-buttonb = tkinter.Button(frame3, text='BW', width=7, height=1, command=Behind, bg ="red")
+buttonb = tkinter.Button(frame3, image=imgBTNBW, command=Behind, bg ="red")
 buttonb.grid(row=2, column=1)
-buttonrl = tkinter.Button(frame3, text='RotateL', width=7, height=1, command=RotateL, bg ="blue")
+buttonrl = tkinter.Button(frame3, image=imgBTNRL, command=RotateL, bg ="blue")
 buttonrl.grid(row=1, column=0)
-buttonrr = tkinter.Button(frame3, text='RotateR', width=7, height=1, command=RotateR, bg ="orange")
+buttonrr = tkinter.Button(frame3, image=imgBTNRR, command=RotateR, bg ="orange")
 buttonrr.grid(row=1, column=3)
 
 
-buttons = tkinter.Button(frame4, text='Stop', width=7, height=1, command=Stop)
+buttons = tkinter.Button(frame4, image=imgBTNStop, borderwidth=0, command=Stop)
 buttons.grid(row=0, column=0)
-buttonm = tkinter.Button(frame4, text='Manual', activebackground='red', width=7, height=1, command=Manual)
+buttonm = tkinter.Button(frame4, image=imgBTNManual, borderwidth=0, command=Manual)
 buttonm.grid(row=1, column=0)
-buttona = tkinter.Button(frame4, text='Auto', activebackground='red', width=7, height=1, command=Auto)
+buttona = tkinter.Button(frame4, image=imgBTNAuto, borderwidth=0, command=Auto)
 buttona.grid(row=2, column=0)
-buttong = tkinter.Button(frame4, text='Gesture', activebackground='red', width=7, height=1, command=Gesture)
+buttong = tkinter.Button(frame4, image=imgBTNGesture, borderwidth=0, command=Gesture)
 buttong.grid(row=3, column=0)
 
 
