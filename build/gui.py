@@ -35,9 +35,17 @@ canvas = Canvas(
 )
 
 canvas.place(x = 0, y = 0)
+image_image_1 = PhotoImage(
+    file=relative_to_assets("image_1.png"))
+image_1 = canvas.create_image(
+    400.0,
+    300.0,
+    image=image_image_1
+)
+
 canvas.create_rectangle(
     150.0,
-    9.0,
+    59.0,
     650.0,
     409.0,
     fill="#D9D9D9",
@@ -315,6 +323,14 @@ button_16.place(
     y=426.0,
     width=99.0,
     height=30.0
+)
+
+image_image_2 = PhotoImage(
+    file=relative_to_assets("image_2.png"))
+image_2 = canvas.create_image(
+    40.0,
+    37.0,
+    image=image_image_2
 )
 window.resizable(False, False)
 window.mainloop()
