@@ -51,24 +51,6 @@ canvas.create_rectangle(
     fill="#D9D9D9",
     outline="")
 
-canvas.create_text(
-    6.0,
-    133.0,
-    anchor="nw",
-    text="HOÀNG TRUNG KIÊN\n2018602155",
-    fill="#000000",
-    font=("Inter", 12 * -1)
-)
-
-canvas.create_text(
-    13.0,
-    90.0,
-    anchor="nw",
-    text="HỌ VÀ TÊN SINH VIÊN \nTRONG NHÓM:",
-    fill="#000000",
-    font=("Inter", 12 * -1)
-)
-
 button_image_1 = PhotoImage(
     file=relative_to_assets("button_1.png"))
 button_1 = Button(
@@ -328,8 +310,8 @@ button_16.place(
 image_image_2 = PhotoImage(
     file=relative_to_assets("image_2.png"))
 image_2 = canvas.create_image(
-    40.0,
-    37.0,
+    74.0,
+    73.0,
     image=image_image_2
 )
 window.resizable(False, False)
